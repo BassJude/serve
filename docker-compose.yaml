@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  web-app:
+    build:
+      # kontekst - informacja skąd będą brane pliki źródłowe. Podajemy bieżący katalog
+      context: .
+      dockerfile: ./Dockerfile
+    # ustalmy sobie nazwe kontenera. Jakbym tego nie podał, to kontener nazywał by się web-app-1, web-app-2, w zależności od ilości uruchomionych kontenerów
+    container_name: web-app
+    ports:
+      - "8003:5000"
+    #  volumes - powiemy, że nasz bieżący katalog mapujemy z katalogiem /opt/app
+    volumes:
+      - ./:/opt/app
