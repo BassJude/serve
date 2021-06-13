@@ -9,6 +9,7 @@ services:
     container_name: web-app
     ports:
       - "8003:5000"
+    restart: always
     #  volumes - powiemy, że nasz bieżący katalog mapujemy z katalogiem /opt/app
     volumes:
       - ./:/opt/app
